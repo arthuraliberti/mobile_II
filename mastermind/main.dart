@@ -1,5 +1,4 @@
 // Mastermind - Jogo de lógica em modo texto
-// Trabalho de faculdade - Desenvolvimento de Software
 // O computador gera uma senha secreta de 4 dígitos (1 a 6) e o jogador tenta adivinhar.
 
 import 'dart:io';
