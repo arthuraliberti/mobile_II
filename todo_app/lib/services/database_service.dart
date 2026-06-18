@@ -8,7 +8,8 @@ class DatabaseService {
 
   // Referência à coleção de tarefas do usuário logado
   CollectionReference get _tasksRef {
-    final uid = _auth.currentUser!.uid;
+    final uid = _auth.currentUser?.uid;
+    if (uid == null) throw Exception('Usuário não autenticado.');
     return _db.collection('users').doc(uid).collection('tasks');
   }
 

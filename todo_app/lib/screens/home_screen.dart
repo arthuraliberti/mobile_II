@@ -4,7 +4,6 @@ import '../services/auth_service.dart';
 import '../services/database_service.dart';
 import '../models/task_model.dart';
 import 'task_form_screen.dart';
-import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -45,12 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (confirm == true) {
       await _authService.logout();
-      if (mounted) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => const LoginScreen()),
-        );
-      }
+      // O AuthGate em main.dart detecta automaticamente o logout
+      // e redireciona para LoginScreen via Stream
     }
   }
 
